@@ -4,12 +4,19 @@
 using namespace std;
 
 /*
-1
-4 6
-S#----
--#-#-#
--#-#--
----#-E
+2
+5 5
+S-###
+-----
+##---
+E#---
+---##
+3 3
+S#E
+-#-
+---
+
+
 */
 
 int N, M;
@@ -22,6 +29,14 @@ int dy[4] = { 0, 1, 0, -1 };
 
 void BFS(int x, int y)
 {
+
+	for (int i = 0; i < 101; i++) {
+		for (int j = 0; j < 101; j++) {
+			check[i][j] = 0;
+			visit[i][j] = 0;
+		}
+	}
+
 	visit[x][y] = 1;
 
 	queue<pair<int, int> > q;
